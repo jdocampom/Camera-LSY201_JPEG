@@ -1,0 +1,646 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : XC7A100T-3CSG324
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : camera_fifo
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" into library work
+Parsing module <camera_fifo>.
+Analyzing Verilog file "/home/juandiegoocampo/Dropbox/Camera/uart.v" into library work
+Parsing module <uart>.
+INFO:HDLCompiler:693 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 28. parameter declaration becomes local in uart with formal parameter declaration list
+Analyzing Verilog file "/home/juandiegoocampo/Dropbox/Camera/FIFO.v" into library work
+Parsing module <FIFO>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 40: Port rx_ack is not connected to this instance
+
+Elaborating module <camera_fifo>.
+WARNING:HDLCompiler:872 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 17: Using initial value of tx_wr since it is never assigned
+WARNING:HDLCompiler:872 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 19: Using initial value of tx_data since it is never assigned
+
+Elaborating module <FIFO(DATO_WIDTH=8,FIFO_LENGTH=53)>.
+
+Elaborating module <uart>.
+WARNING:HDLCompiler:413 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 43: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 88: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 91: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 135: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 138: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1127 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 46: Assignment to rx_avail ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 47: Assignment to rx_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 51: Assignment to tx_busy ignored, since the identifier is never used
+WARNING:HDLCompiler:552 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 40: Input port rx_ack is not connected on this instance
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <camera_fifo>.
+    Related source file is "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v".
+WARNING:Xst:2898 - Port 'rx_ack', unconnected in block instance 'peri', is tied to GND.
+INFO:Xst:3210 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" line 40: Output port <rx_avail> of the instance <peri> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" line 40: Output port <rx_error> of the instance <peri> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" line 40: Output port <tx_busy> of the instance <peri> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <w>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <camera_fifo> synthesized.
+
+Synthesizing Unit <FIFO>.
+    Related source file is "/home/juandiegoocampo/Dropbox/Camera/FIFO.v".
+        DATO_WIDTH = 8
+        FIFO_LENGTH = 53
+    Found 6-bit register for signal <cont>.
+    Found 6-bit register for signal <contw>.
+    Found 6-bit register for signal <contr>.
+    Found 8-bit register for signal <datout>.
+    Found 424-bit register for signal <n0282[423:0]>.
+    Found 6-bit subtractor for signal <cont[5]_GND_2_o_sub_121_OUT> created at line 57.
+    Found 6-bit adder for signal <cont[5]_GND_2_o_add_58_OUT> created at line 49.
+    Found 6-bit adder for signal <contw[5]_GND_2_o_add_294_OUT> created at line 73.
+    Found 6-bit adder for signal <contr[5]_GND_2_o_add_354_OUT> created at line 79.
+    Found 8-bit 53-to-1 multiplexer for signal <contr[5]_X_2_o_wide_mux_299_OUT> created at line 77.
+WARNING:Xst:737 - Found 1-bit latch for signal <empy>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dato>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <full>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 6-bit comparator lessequal for signal <n0167> created at line 74
+    Found 6-bit comparator lessequal for signal <n0229> created at line 80
+    Found 6-bit comparator greater for signal <GND_2_o_cont[5]_LessThan_385_o> created at line 94
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 450 D-type flip-flop(s).
+	inferred   3 Latch(s).
+	inferred   3 Comparator(s).
+	inferred 220 Multiplexer(s).
+Unit <FIFO> synthesized.
+
+Synthesizing Unit <uart>.
+    Related source file is "/home/juandiegoocampo/Dropbox/Camera/uart.v".
+        freq_hz = 100000000
+        baud = 38400
+    Found 1-bit register for signal <uart_rxd1>.
+    Found 1-bit register for signal <uart_rxd2>.
+    Found 1-bit register for signal <rx_busy>.
+    Found 4-bit register for signal <rx_count16>.
+    Found 4-bit register for signal <rx_bitcount>.
+    Found 1-bit register for signal <rx_avail>.
+    Found 1-bit register for signal <rx_error>.
+    Found 8-bit register for signal <rx_data>.
+    Found 8-bit register for signal <rxd_reg>.
+    Found 1-bit register for signal <tx_busy>.
+    Found 1-bit register for signal <uart_txd>.
+    Found 4-bit register for signal <tx_count16>.
+    Found 8-bit register for signal <txd_reg>.
+    Found 4-bit register for signal <tx_bitcount>.
+    Found 16-bit register for signal <enable16_counter>.
+    Found 4-bit adder for signal <rx_count16[3]_GND_6_o_add_11_OUT> created at line 88.
+    Found 4-bit adder for signal <rx_bitcount[3]_GND_6_o_add_13_OUT> created at line 91.
+    Found 4-bit adder for signal <tx_count16[3]_GND_6_o_add_44_OUT> created at line 135.
+    Found 4-bit adder for signal <tx_bitcount[3]_GND_6_o_add_46_OUT> created at line 138.
+    Found 16-bit subtractor for signal <GND_6_o_GND_6_o_sub_3_OUT<15:0>> created at line 43.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  63 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <uart> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 16-bit subtractor                                     : 1
+ 4-bit adder                                           : 4
+ 6-bit adder                                           : 2
+ 6-bit addsub                                          : 1
+# Registers                                            : 21
+ 1-bit register                                        : 8
+ 16-bit register                                       : 1
+ 4-bit register                                        : 4
+ 424-bit register                                      : 1
+ 6-bit register                                        : 3
+ 8-bit register                                        : 4
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Comparators                                          : 3
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 2
+# Multiplexers                                         : 222
+ 1-bit 2-to-1 multiplexer                              : 3
+ 16-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 106
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 109
+ 8-bit 53-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <tx_busy> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <txd_reg_7> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <txd_reg_6> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <txd_reg_5> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <txd_reg_4> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <txd_reg_3> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <txd_reg_2> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <txd_reg_1> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <txd_reg_0> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <uart_txd> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tx_bitcount_0> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tx_bitcount_1> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tx_bitcount_2> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <tx_bitcount_3> (without init value) has a constant value of 0 in block <peri>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <txd_reg<7:0>> (without init value) have a constant value of 0 in block <uart>.
+
+Synthesizing (advanced) Unit <FIFO>.
+The following registers are absorbed into counter <cont>: 1 register on signal <cont>.
+The following registers are absorbed into counter <contw>: 1 register on signal <contw>.
+The following registers are absorbed into counter <contr>: 1 register on signal <contr>.
+Unit <FIFO> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart>.
+The following registers are absorbed into counter <enable16_counter>: 1 register on signal <enable16_counter>.
+The following registers are absorbed into counter <tx_count16>: 1 register on signal <tx_count16>.
+The following registers are absorbed into counter <rx_bitcount>: 1 register on signal <rx_bitcount>.
+The following registers are absorbed into counter <rx_count16>: 1 register on signal <rx_count16>.
+The following registers are absorbed into counter <tx_bitcount>: 1 register on signal <tx_bitcount>.
+Unit <uart> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 8
+ 16-bit down counter                                   : 1
+ 4-bit up counter                                      : 4
+ 6-bit up counter                                      : 2
+ 6-bit updown counter                                  : 1
+# Registers                                            : 456
+ Flip-Flops                                            : 456
+# Comparators                                          : 3
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 2
+# Multiplexers                                         : 219
+ 1-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 106
+ 8-bit 2-to-1 multiplexer                              : 109
+ 8-bit 53-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <tx_busy> (without init value) has a constant value of 0 in block <uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <uart_txd> (without init value) has a constant value of 0 in block <uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:3001 - This design contains one or more registers or latches with an active
+   asynchronous set and asynchronous reset. While this circuit can be built,
+   it creates a sub-optimal implementation in terms of area, power and
+   performance. For a more optimal implementation Xilinx highly recommends
+   one of the following:
+
+          1) Remove either the set or reset from all registers and latches if
+             not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Artix7 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    dato in unit <FIFO>
+    empy in unit <FIFO>
+    full in unit <FIFO>
+
+
+Optimizing unit <camera_fifo> ...
+
+Optimizing unit <uart> ...
+
+Optimizing unit <FIFO> ...
+WARNING:Xst:2677 - Node <peri/rx_avail> of sequential type is unconnected in block <camera_fifo>.
+WARNING:Xst:2677 - Node <peri/rx_error> of sequential type is unconnected in block <camera_fifo>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block camera_fifo, actual ratio is 1.
+Latch fifo/empy has been replicated 1 time(s) to handle iob=true attribute.
+Latch fifo/full has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 494
+ Flip-Flops                                            : 494
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 991
+#      GND                         : 1
+#      INV                         : 16
+#      LUT1                        : 1
+#      LUT2                        : 11
+#      LUT3                        : 50
+#      LUT4                        : 10
+#      LUT5                        : 442
+#      LUT6                        : 428
+#      MUXCY                       : 15
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 499
+#      FD                          : 6
+#      FDE                         : 440
+#      FDR                         : 17
+#      FDRE                        : 28
+#      FDS                         : 3
+#      LD                          : 5
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 15
+#      IBUF                        : 3
+#      OBUF                        : 12
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             487  out of  126800     0%  
+ Number of Slice LUTs:                  958  out of  63400     1%  
+    Number used as Logic:               958  out of  63400     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    968
+   Number with an unused Flip Flop:     481  out of    968    49%  
+   Number with an unused LUT:            10  out of    968     1%  
+   Number of fully used LUT-FF pairs:   477  out of    968    49%  
+   Number of unique control sets:        14
+
+IO Utilization: 
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    210     7%  
+    IOB Flip Flops/Latches:              12
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 44    |
+fifo/orwr(fifo/orwr1:O)            | BUFG(*)(fifo/cont_5)   | 450   |
+fifo/dato_G(fifo/dato_G:O)         | NONE(*)(fifo/dato)     | 1     |
+fifo/empy_G(fifo/empy_G:O)         | NONE(*)(fifo/empy)     | 2     |
+fifo/full_G(fifo/full_G:O)         | NONE(*)(fifo/full)     | 2     |
+-----------------------------------+------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.892ns (Maximum Frequency: 345.758MHz)
+   Minimum input arrival time before clock: 2.718ns
+   Maximum output required time after clock: 0.751ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.892ns (frequency: 345.758MHz)
+  Total number of paths / destination ports: 1146 / 76
+-------------------------------------------------------------------------
+Delay:               2.892ns (Levels of Logic = 4)
+  Source:            peri/enable16_counter_1 (FF)
+  Destination:       peri/rx_data_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: peri/enable16_counter_1 to peri/rx_data_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.361   0.697  peri/enable16_counter_1 (peri/enable16_counter_1)
+     LUT6:I0->O            1   0.097   0.379  peri/enable16<15>1 (peri/enable16<15>)
+     LUT6:I4->O           14   0.097   0.355  peri/enable16<15>3 (peri/enable16)
+     LUT6:I5->O            3   0.097   0.305  peri/_n03661 (peri/_n0366)
+     LUT6:I5->O            8   0.097   0.311  peri/_n0288_inv1 (peri/_n0288_inv)
+     FDE:CE                    0.095          peri/rxd_reg_0
+    ----------------------------------------
+    Total                      2.892ns (0.844ns logic, 2.048ns route)
+                                       (29.2% logic, 70.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fifo/orwr'
+  Clock period: 2.817ns (frequency: 354.937MHz)
+  Total number of paths / destination ports: 13699 / 450
+-------------------------------------------------------------------------
+Delay:               2.817ns (Levels of Logic = 4)
+  Source:            fifo/f_52_359 (FF)
+  Destination:       fifo/datout_7 (FF)
+  Source Clock:      fifo/orwr rising
+  Destination Clock: fifo/orwr rising
+
+  Data Path: fifo/f_52_359 to fifo/datout_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.361   0.697  fifo/f_52_359 (fifo/f_52_359)
+     LUT6:I0->O            1   0.097   0.556  fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_1129 (fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_1129)
+     LUT6:I2->O            1   0.097   0.511  fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_67 (fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_67)
+     LUT6:I3->O            1   0.097   0.295  fifo/Mmux__n088481 (fifo/Mmux__n08848)
+     LUT6:I5->O            1   0.097   0.000  fifo/Mmux__n088482 (fifo/_n0884<7>)
+     FDRE:D                    0.008          fifo/datout_7
+    ----------------------------------------
+    Total                      2.817ns (0.757ns logic, 2.060ns route)
+                                       (26.9% logic, 73.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 45 / 45
+-------------------------------------------------------------------------
+Offset:              1.422ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       peri/rx_bitcount_2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to peri/rx_bitcount_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           184   0.001   0.686  reset_IBUF (reset_IBUF)
+     LUT4:I0->O            3   0.097   0.289  peri/Mcount_rx_bitcount_val1 (peri/Mcount_rx_bitcount_val)
+     FDRE:R                    0.349          peri/rx_bitcount_3
+    ----------------------------------------
+    Total                      1.422ns (0.447ns logic, 0.975ns route)
+                                       (31.4% logic, 68.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fifo/orwr'
+  Total number of paths / destination ports: 3434 / 905
+-------------------------------------------------------------------------
+Offset:              2.718ns (Levels of Logic = 5)
+  Source:            rclk (PAD)
+  Destination:       fifo/f_52_319 (FF)
+  Destination Clock: fifo/orwr rising
+
+  Data Path: rclk to fifo/f_52_319
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           117   0.001   0.803  rclk_IBUF (rclk_IBUF)
+     LUT5:I0->O          101   0.097   0.811  fifo/rclk_GND_2_o_mux_373_OUT<0>111 (fifo/rclk_GND_2_o_mux_373_OUT<0>11)
+     LUT6:I0->O            1   0.097   0.295  fifo/rclk_GND_2_o_mux_373_OUT<184>41 (fifo/rclk_GND_2_o_mux_373_OUT<184>41)
+     LUT6:I5->O            8   0.097   0.412  fifo/rclk_GND_2_o_mux_373_OUT<184>42 (fifo/rclk_GND_2_o_mux_373_OUT<184>4)
+     LUT5:I3->O            1   0.097   0.000  fifo/rclk_GND_2_o_mux_373_OUT<191>1 (fifo/rclk_GND_2_o_mux_373_OUT<191>)
+     FDE:D                     0.008          fifo/f_52_191
+    ----------------------------------------
+    Total                      2.718ns (0.397ns logic, 2.321ns route)
+                                       (14.6% logic, 85.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fifo/orwr'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              0.640ns (Levels of Logic = 1)
+  Source:            fifo/datout_7 (FF)
+  Destination:       datout<7> (PAD)
+  Source Clock:      fifo/orwr rising
+
+  Data Path: fifo/datout_7 to datout<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             1   0.361   0.279  fifo/datout_7 (fifo/datout_7)
+     OBUF:I->O                 0.000          datout_7_OBUF (datout<7>)
+    ----------------------------------------
+    Total                      0.640ns (0.361ns logic, 0.279ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fifo/empy_G'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.751ns (Levels of Logic = 1)
+  Source:            fifo/empy_1 (LATCH)
+  Destination:       empy (PAD)
+  Source Clock:      fifo/empy_G falling
+
+  Data Path: fifo/empy_1 to empy
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.472   0.279  fifo/empy_1 (fifo/empy_1)
+     OBUF:I->O                 0.000          empy_OBUF (empy)
+    ----------------------------------------
+    Total                      0.751ns (0.472ns logic, 0.279ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fifo/dato_G'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.751ns (Levels of Logic = 1)
+  Source:            fifo/dato (LATCH)
+  Destination:       dato (PAD)
+  Source Clock:      fifo/dato_G falling
+
+  Data Path: fifo/dato to dato
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.472   0.279  fifo/dato (fifo/dato)
+     OBUF:I->O                 0.000          dato_OBUF (dato)
+    ----------------------------------------
+    Total                      0.751ns (0.472ns logic, 0.279ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fifo/full_G'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.751ns (Levels of Logic = 1)
+  Source:            fifo/full_1 (LATCH)
+  Destination:       full (PAD)
+  Source Clock:      fifo/full_G falling
+
+  Data Path: fifo/full_1 to full
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.472   0.279  fifo/full_1 (fifo/full_1)
+     OBUF:I->O                 0.000          full_OBUF (full)
+    ----------------------------------------
+    Total                      0.751ns (0.472ns logic, 0.279ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.892|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock fifo/dato_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fifo/orwr      |         |         |    1.801|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock fifo/empy_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fifo/orwr      |         |         |    1.792|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock fifo/full_G
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fifo/orwr      |         |         |    1.796|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock fifo/orwr
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.945|         |         |         |
+fifo/empy_G    |         |    2.764|         |         |
+fifo/full_G    |         |    2.892|         |         |
+fifo/orwr      |    2.817|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.46 secs
+ 
+--> 
+
+
+Total memory usage is 516412 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   36 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

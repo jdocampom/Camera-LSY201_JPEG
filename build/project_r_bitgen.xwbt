@@ -1,0 +1,7 @@
+INFILE=/home/juandiegoocampo/Dropbox/Camera/build/project_r.ncd
+OUTFILE=/home/juandiegoocampo/Dropbox/Camera/build/project_r.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=/home/juandiegoocampo/Dropbox/Camera/build
+LICENSE=WebPack
+USER_INFO=211383071_0_0_378

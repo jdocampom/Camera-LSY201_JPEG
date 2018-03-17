@@ -1,0 +1,10 @@
+run
+-top camera_fifo 
+-p XC7A100T-3CSG324
+-opt_mode Area
+-opt_level 1
+-ifn project.src
+-ifmt mixed
+-ofn project.ngc
+-ofmt NGC
+-rtlview yes

@@ -1,0 +1,34 @@
+##
+## camera_fifo.ucf
+## Universal Constraints File for LS-Y201 JPEG Camera Driver Design.
+##
+## Created by Óscar Julián Umaña, Juan Diego Ocampo and Raúl Morales on 03/05/2018.
+## Copyright © 2018 Juan Diego Ocampo. All rights reserved.
+##
+
+# CLK Signal
+NET "clk"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";
+NET "clk" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100 MHz HIGH 50%;
+
+# UART Channels
+NET "rx"	LOC = C4 | IOSTANDARD = LVCMOS33;  # USB-RS232 Interface
+NET "tx"	LOC = D4 | IOSTANDARD = LVCMOS33;  # USB-RS232 Interface
+NET "reset" LOC = E16 | IOSTANDARD = LVCMOS33; # CENTRE_BUTTON
+
+# Read
+NET "rclk"		LOC = R10 | IOSTANDARD = LVCMOS33; # RIGHT_BUTTON
+#NET "rclk"		LOC = P4 | IOSTANDARD = LVCMOS33; # SWITCH_15 (ADDED FOR TESTING)
+NET "datout<0>" LOC = T8 | IOSTANDARD = LVCMOS33;  # LED_0
+NET "datout<1>" LOC = V9 | IOSTANDARD = LVCMOS33;  # LED_1
+NET "datout<2>" LOC = R8 | IOSTANDARD = LVCMOS33;  # LED_2
+NET "datout<3>" LOC = T6 | IOSTANDARD = LVCMOS33;  # LED_3
+NET "datout<4>" LOC = T5 | IOSTANDARD = LVCMOS33;  # LED_4
+NET "datout<5>" LOC = T4 | IOSTANDARD = LVCMOS33;  # LED_5
+NET "datout<6>" LOC = U7 | IOSTANDARD = LVCMOS33;  # LED_6
+NET "datout<7>" LOC = U6 | IOSTANDARD = LVCMOS33;  # LED_7
+
+# Status Signals
+NET "full" LOC = U1 | IOSTANDARD = LVCMOS33; # LED_13
+NET "dato" LOC = R2 | IOSTANDARD = LVCMOS33; # LED_14
+NET "empy" LOC = P2 | IOSTANDARD = LVCMOS33; # LED_15
