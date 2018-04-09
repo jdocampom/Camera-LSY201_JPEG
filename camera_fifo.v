@@ -23,7 +23,7 @@ module camera_fifo(clk, reset, tx, rx, datout, rclk, empy, dato, full);
 // FIFO Module Instantiation	
 	FIFO #(
 		.DATO_WIDTH(8),
-		.FIFO_LENGTH(53)
+		.FIFO_LENGTH(7)
 
 	) fifo(
 		.wclk(wclk),

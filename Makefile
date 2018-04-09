@@ -70,4 +70,4 @@ iversim:  build/project.src
 	vvp simulation/$(DESIGN)_TB.vvp; mv $(DESIGN)_TB.vcd simulation/
 	gtkwave simulation/$(DESIGN)_TB.vcd&
 upload: 
-	xc3sprog -c ftdi -v -p1 $(DESIGN).bit
+	djtgcfg -d Nexys4 -i 0 -f $(DESIGN).bit

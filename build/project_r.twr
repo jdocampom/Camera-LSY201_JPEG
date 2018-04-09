@@ -29,646 +29,16 @@ Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH
 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 1146 paths analyzed, 139 endpoints analyzed, 0 failing endpoints
+ 1178 paths analyzed, 139 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   4.030ns.
+ Minimum period is   3.613ns.
 --------------------------------------------------------------------------------
-Slack:                  5.970ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
-  Destination:          peri/rx_data_7 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.951ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_7
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_7
-    -------------------------------------------------  ---------------------------
-    Total                                      3.951ns (0.879ns logic, 3.072ns route)
-                                                       (22.2% logic, 77.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  5.970ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
-  Destination:          peri/rx_data_6 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.951ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_6
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_6
-    -------------------------------------------------  ---------------------------
-    Total                                      3.951ns (0.879ns logic, 3.072ns route)
-                                                       (22.2% logic, 77.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  5.970ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
-  Destination:          peri/rx_data_5 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.951ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_5
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_5
-    -------------------------------------------------  ---------------------------
-    Total                                      3.951ns (0.879ns logic, 3.072ns route)
-                                                       (22.2% logic, 77.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  5.970ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
-  Destination:          peri/rx_data_4 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.951ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_4
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_4
-    -------------------------------------------------  ---------------------------
-    Total                                      3.951ns (0.879ns logic, 3.072ns route)
-                                                       (22.2% logic, 77.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  5.973ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
-  Destination:          peri/rx_data_5 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.948ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_5
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_5
-    -------------------------------------------------  ---------------------------
-    Total                                      3.948ns (0.879ns logic, 3.069ns route)
-                                                       (22.3% logic, 77.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  5.973ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
-  Destination:          peri/rx_data_7 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.948ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_7
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_7
-    -------------------------------------------------  ---------------------------
-    Total                                      3.948ns (0.879ns logic, 3.069ns route)
-                                                       (22.3% logic, 77.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  5.973ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
-  Destination:          peri/rx_data_6 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.948ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_6
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_6
-    -------------------------------------------------  ---------------------------
-    Total                                      3.948ns (0.879ns logic, 3.069ns route)
-                                                       (22.3% logic, 77.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  5.973ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
-  Destination:          peri/rx_data_4 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.948ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_4
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_4
-    -------------------------------------------------  ---------------------------
-    Total                                      3.948ns (0.879ns logic, 3.069ns route)
-                                                       (22.3% logic, 77.7% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.023ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_0 (FF)
-  Destination:          peri/rx_data_7 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.898ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_7
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
-                                                       peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_7
-    -------------------------------------------------  ---------------------------
-    Total                                      3.898ns (0.969ns logic, 2.929ns route)
-                                                       (24.9% logic, 75.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.023ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_0 (FF)
-  Destination:          peri/rx_data_6 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.898ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_6
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
-                                                       peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_6
-    -------------------------------------------------  ---------------------------
-    Total                                      3.898ns (0.969ns logic, 2.929ns route)
-                                                       (24.9% logic, 75.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.023ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_0 (FF)
-  Destination:          peri/rx_data_5 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.898ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_5
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
-                                                       peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_5
-    -------------------------------------------------  ---------------------------
-    Total                                      3.898ns (0.969ns logic, 2.929ns route)
-                                                       (24.9% logic, 75.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.023ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_0 (FF)
-  Destination:          peri/rx_data_4 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.898ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.044ns (0.557 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_4
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
-                                                       peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
-                                                       peri/rx_data_4
-    -------------------------------------------------  ---------------------------
-    Total                                      3.898ns (0.969ns logic, 2.929ns route)
-                                                       (24.9% logic, 75.1% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.031ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
-  Destination:          peri/rx_data_1 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.893ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
-                                                       peri/rx_data_1
-    -------------------------------------------------  ---------------------------
-    Total                                      3.893ns (0.879ns logic, 3.014ns route)
-                                                       (22.6% logic, 77.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.031ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
-  Destination:          peri/rx_data_0 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.893ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
-                                                       peri/rx_data_0
-    -------------------------------------------------  ---------------------------
-    Total                                      3.893ns (0.879ns logic, 3.014ns route)
-                                                       (22.6% logic, 77.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.031ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
-  Destination:          peri/rx_data_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.893ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
-                                                       peri/rx_data_2
-    -------------------------------------------------  ---------------------------
-    Total                                      3.893ns (0.879ns logic, 3.014ns route)
-                                                       (22.6% logic, 77.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.031ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_4 (FF)
+Slack:                  6.387ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
   Destination:          peri/rx_data_3 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.893ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
+  Data Path Delay:      3.540ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -679,80 +49,38 @@ Slack:                  6.031ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_4 to peri/rx_data_3
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X64Y80.AQ      Tcko                  0.341   peri/enable16_counter<6>
-                                                       peri/enable16_counter_4
-    SLICE_X65Y79.D2      net (fanout=2)        0.603   peri/enable16_counter<4>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
                                                        peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
                                                        peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
                                                        peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
                                                        peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
                                                        peri/rx_data_3
     -------------------------------------------------  ---------------------------
-    Total                                      3.893ns (0.879ns logic, 3.014ns route)
-                                                       (22.6% logic, 77.4% route)
+    Total                                      3.540ns (0.879ns logic, 2.661ns route)
+                                                       (24.8% logic, 75.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  6.034ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
-  Destination:          peri/rx_data_3 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.890ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_3
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
-                                                       peri/rx_data_3
-    -------------------------------------------------  ---------------------------
-    Total                                      3.890ns (0.879ns logic, 3.011ns route)
-                                                       (22.6% logic, 77.4% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.034ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
+Slack:                  6.387ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
   Destination:          peri/rx_data_2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.890ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
+  Data Path Delay:      3.540ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -763,38 +91,38 @@ Slack:                  6.034ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_2
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
                                                        peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
                                                        peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
                                                        peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
                                                        peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
                                                        peri/rx_data_2
     -------------------------------------------------  ---------------------------
-    Total                                      3.890ns (0.879ns logic, 3.011ns route)
-                                                       (22.6% logic, 77.4% route)
+    Total                                      3.540ns (0.879ns logic, 2.661ns route)
+                                                       (24.8% logic, 75.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  6.034ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
+Slack:                  6.387ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
   Destination:          peri/rx_data_1 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.890ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
+  Data Path Delay:      3.540ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -805,38 +133,38 @@ Slack:                  6.034ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_1
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
                                                        peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
                                                        peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
                                                        peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
                                                        peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
                                                        peri/rx_data_1
     -------------------------------------------------  ---------------------------
-    Total                                      3.890ns (0.879ns logic, 3.011ns route)
-                                                       (22.6% logic, 77.4% route)
+    Total                                      3.540ns (0.879ns logic, 2.661ns route)
+                                                       (24.8% logic, 75.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  6.034ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_5 (FF)
+Slack:                  6.387ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
   Destination:          peri/rx_data_0 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.890ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
+  Data Path Delay:      3.540ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -847,38 +175,38 @@ Slack:                  6.034ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_0
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X65Y80.AQ      Tcko                  0.341   peri/enable16_counter<7>
-                                                       peri/enable16_counter_5
-    SLICE_X65Y79.D1      net (fanout=2)        0.600   peri/enable16_counter<5>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
                                                        peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
                                                        peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
                                                        peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
                                                        peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
                                                        peri/rx_data_0
     -------------------------------------------------  ---------------------------
-    Total                                      3.890ns (0.879ns logic, 3.011ns route)
-                                                       (22.6% logic, 77.4% route)
+    Total                                      3.540ns (0.879ns logic, 2.661ns route)
+                                                       (24.8% logic, 75.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  6.084ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  6.406ns (requirement - (data path - clock path skew + uncertainty))
   Source:               peri/enable16_counter_0 (FF)
   Destination:          peri/rx_data_1 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.840ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
+  Data Path Delay:      3.520ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.627 - 0.666)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -893,118 +221,34 @@ Slack:                  6.084ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
                                                        peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
                                                        peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
                                                        peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
                                                        peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
                                                        peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
                                                        peri/rx_data_1
     -------------------------------------------------  ---------------------------
-    Total                                      3.840ns (0.969ns logic, 2.871ns route)
-                                                       (25.2% logic, 74.8% route)
+    Total                                      3.520ns (0.969ns logic, 2.551ns route)
+                                                       (27.5% logic, 72.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  6.084ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_0 (FF)
-  Destination:          peri/rx_data_0 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.840ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
-                                                       peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
-                                                       peri/rx_data_0
-    -------------------------------------------------  ---------------------------
-    Total                                      3.840ns (0.969ns logic, 2.871ns route)
-                                                       (25.2% logic, 74.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.084ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_0 (FF)
-  Destination:          peri/rx_data_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.840ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_2
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
-                                                       peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
-                                                       peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
-                                                       peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
-                                                       peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
-                                                       peri/rx_data_2
-    -------------------------------------------------  ---------------------------
-    Total                                      3.840ns (0.969ns logic, 2.871ns route)
-                                                       (25.2% logic, 74.8% route)
-
---------------------------------------------------------------------------------
-Slack:                  6.084ns (requirement - (data path - clock path skew + uncertainty))
+Slack:                  6.406ns (requirement - (data path - clock path skew + uncertainty))
   Source:               peri/enable16_counter_0 (FF)
   Destination:          peri/rx_data_3 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.840ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.041ns (0.560 - 0.601)
+  Data Path Delay:      3.520ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.627 - 0.666)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -1019,34 +263,34 @@ Slack:                  6.084ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X65Y80.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
                                                        peri/enable16_counter_0
-    SLICE_X65Y79.D3      net (fanout=2)        0.460   peri/enable16_counter<0>
-    SLICE_X65Y79.D       Tilo                  0.097   peri/enable16<15>
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
                                                        peri/enable16<15>1
-    SLICE_X65Y81.A1      net (fanout=1)        0.596   peri/enable16<15>
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
                                                        peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
                                                        peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
                                                        peri/_n0273_inv
-    SLICE_X67Y69.CE      net (fanout=2)        0.416   peri/_n0273_inv
-    SLICE_X67Y69.CLK     Tceck                 0.150   peri/rx_data<3>
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
                                                        peri/rx_data_3
     -------------------------------------------------  ---------------------------
-    Total                                      3.840ns (0.969ns logic, 2.871ns route)
-                                                       (25.2% logic, 74.8% route)
+    Total                                      3.520ns (0.969ns logic, 2.551ns route)
+                                                       (27.5% logic, 72.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  6.157ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               peri/enable16_counter_9 (FF)
-  Destination:          peri/rx_data_7 (FF)
+Slack:                  6.406ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_0 (FF)
+  Destination:          peri/rx_data_2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.762ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.046ns (0.557 - 0.603)
+  Data Path Delay:      3.520ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.627 - 0.666)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -1057,30 +301,786 @@ Slack:                  6.157ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: peri/enable16_counter_9 to peri/rx_data_7
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X64Y81.BQ      Tcko                  0.341   peri/enable16_counter<11>
-                                                       peri/enable16_counter_9
-    SLICE_X65Y81.B2      net (fanout=2)        0.713   peri/enable16_counter<9>
-    SLICE_X65Y81.B       Tilo                  0.097   peri/enable16<15>1
-                                                       peri/enable16<15>2
-    SLICE_X65Y81.A4      net (fanout=1)        0.297   peri/enable16<15>1
-    SLICE_X65Y81.A       Tilo                  0.097   peri/enable16<15>1
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+                                                       peri/enable16_counter_0
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
                                                        peri/enable16<15>3
-    SLICE_X66Y77.A2      net (fanout=11)       0.964   peri/enable16
-    SLICE_X66Y77.A       Tilo                  0.097   peri/_n0288_inv
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
                                                        peri/_n03661
-    SLICE_X66Y76.A4      net (fanout=3)        0.435   peri/_n0366
-    SLICE_X66Y76.A       Tilo                  0.097   peri/_n0273_inv
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
                                                        peri/_n0273_inv
-    SLICE_X67Y71.CE      net (fanout=2)        0.474   peri/_n0273_inv
-    SLICE_X67Y71.CLK     Tceck                 0.150   peri/rx_data<7>
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
+                                                       peri/rx_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                      3.520ns (0.969ns logic, 2.551ns route)
+                                                       (27.5% logic, 72.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.406ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_0 (FF)
+  Destination:          peri/rx_data_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.520ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.627 - 0.666)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+                                                       peri/enable16_counter_0
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
+                                                       peri/rx_data_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.520ns (0.969ns logic, 2.551ns route)
+                                                       (27.5% logic, 72.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.481ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
+  Destination:          peri/rx_data_7 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.445ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
                                                        peri/rx_data_7
     -------------------------------------------------  ---------------------------
-    Total                                      3.762ns (0.879ns logic, 2.883ns route)
-                                                       (23.4% logic, 76.6% route)
+    Total                                      3.445ns (0.879ns logic, 2.566ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.481ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
+  Destination:          peri/rx_data_6 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.445ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_6
+    -------------------------------------------------  ---------------------------
+    Total                                      3.445ns (0.879ns logic, 2.566ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.481ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
+  Destination:          peri/rx_data_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.445ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_5
+    -------------------------------------------------  ---------------------------
+    Total                                      3.445ns (0.879ns logic, 2.566ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.481ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_1 (FF)
+  Destination:          peri/rx_data_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.445ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_1 to peri/rx_data_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.BQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_1
+    SLICE_X72Y81.A2      net (fanout=2)        0.718   peri/enable16_counter<1>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_4
+    -------------------------------------------------  ---------------------------
+    Total                                      3.445ns (0.879ns logic, 2.566ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.500ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_0 (FF)
+  Destination:          peri/rx_data_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.425ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.040ns (0.626 - 0.666)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+                                                       peri/enable16_counter_0
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_5
+    -------------------------------------------------  ---------------------------
+    Total                                      3.425ns (0.969ns logic, 2.456ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.500ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_0 (FF)
+  Destination:          peri/rx_data_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.425ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.040ns (0.626 - 0.666)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+                                                       peri/enable16_counter_0
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_4
+    -------------------------------------------------  ---------------------------
+    Total                                      3.425ns (0.969ns logic, 2.456ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.500ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_0 (FF)
+  Destination:          peri/rx_data_6 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.425ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.040ns (0.626 - 0.666)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+                                                       peri/enable16_counter_0
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_6
+    -------------------------------------------------  ---------------------------
+    Total                                      3.425ns (0.969ns logic, 2.456ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.500ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_0 (FF)
+  Destination:          peri/rx_data_7 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.425ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.040ns (0.626 - 0.666)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_0 to peri/rx_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X72Y82.AMUX    Tshcko                0.431   peri/enable16_counter<7>
+                                                       peri/enable16_counter_0
+    SLICE_X72Y81.A1      net (fanout=2)        0.608   peri/enable16_counter<0>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      3.425ns (0.969ns logic, 2.456ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.546ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_3 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.381ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
+                                                       peri/rx_data_3
+    -------------------------------------------------  ---------------------------
+    Total                                      3.381ns (0.879ns logic, 2.502ns route)
+                                                       (26.0% logic, 74.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.546ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.381ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
+                                                       peri/rx_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                      3.381ns (0.879ns logic, 2.502ns route)
+                                                       (26.0% logic, 74.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.546ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.381ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
+                                                       peri/rx_data_1
+    -------------------------------------------------  ---------------------------
+    Total                                      3.381ns (0.879ns logic, 2.502ns route)
+                                                       (26.0% logic, 74.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.546ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.381ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.038ns (0.627 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
+                                                       peri/rx_data_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.381ns (0.879ns logic, 2.502ns route)
+                                                       (26.0% logic, 74.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.640ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.286ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_5
+    -------------------------------------------------  ---------------------------
+    Total                                      3.286ns (0.879ns logic, 2.407ns route)
+                                                       (26.7% logic, 73.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.640ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.286ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_4
+    -------------------------------------------------  ---------------------------
+    Total                                      3.286ns (0.879ns logic, 2.407ns route)
+                                                       (26.7% logic, 73.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.640ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_6 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.286ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_6
+    -------------------------------------------------  ---------------------------
+    Total                                      3.286ns (0.879ns logic, 2.407ns route)
+                                                       (26.7% logic, 73.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.640ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_3 (FF)
+  Destination:          peri/rx_data_7 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.286ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.626 - 0.665)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_3 to peri/rx_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X73Y81.DQ      Tcko                  0.341   peri/enable16_counter<3>
+                                                       peri/enable16_counter_3
+    SLICE_X72Y81.A3      net (fanout=2)        0.559   peri/enable16_counter<3>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y69.CE      net (fanout=2)        0.642   peri/_n0273_inv
+    SLICE_X75Y69.CLK     Tceck                 0.150   peri/rx_data<7>
+                                                       peri/rx_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      3.286ns (0.879ns logic, 2.407ns route)
+                                                       (26.7% logic, 73.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  6.682ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               peri/enable16_counter_5 (FF)
+  Destination:          peri/rx_data_3 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.244ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.039ns (0.627 - 0.666)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: peri/enable16_counter_5 to peri/rx_data_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X72Y82.AQ      Tcko                  0.341   peri/enable16_counter<7>
+                                                       peri/enable16_counter_5
+    SLICE_X72Y81.A4      net (fanout=2)        0.422   peri/enable16_counter<5>
+    SLICE_X72Y81.A       Tilo                  0.097   peri/enable16<15>
+                                                       peri/enable16<15>1
+    SLICE_X72Y83.A5      net (fanout=1)        0.288   peri/enable16<15>
+    SLICE_X72Y83.A       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/enable16<15>3
+    SLICE_X72Y83.B5      net (fanout=8)        0.206   peri/enable16
+    SLICE_X72Y83.B       Tilo                  0.097   peri/enable16<15>1
+                                                       peri/_n03661
+    SLICE_X73Y79.A2      net (fanout=3)        0.712   peri/_n0366
+    SLICE_X73Y79.A       Tilo                  0.097   peri/_n0273_inv
+                                                       peri/_n0273_inv
+    SLICE_X75Y68.CE      net (fanout=2)        0.737   peri/_n0273_inv
+    SLICE_X75Y68.CLK     Tceck                 0.150   peri/rx_data<3>
+                                                       peri/rx_data_3
+    -------------------------------------------------  ---------------------------
+    Total                                      3.244ns (0.879ns logic, 2.365ns route)
+                                                       (27.1% logic, 72.9% route)
 
 --------------------------------------------------------------------------------
 
@@ -1108,7 +1108,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_1/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1117,7 +1117,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_1/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - min period limit)
@@ -1125,7 +1125,7 @@ Slack: 9.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_1/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
@@ -1134,7 +1134,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_2/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1143,7 +1143,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_2/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - min period limit)
@@ -1151,7 +1151,7 @@ Slack: 9.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_2/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
@@ -1160,7 +1160,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_3/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1169,7 +1169,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_3/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - min period limit)
@@ -1177,7 +1177,7 @@ Slack: 9.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: peri/enable16_counter<3>/CLK
   Logical resource: peri/enable16_counter_3/CK
-  Location pin: SLICE_X64Y79.CLK
+  Location pin: SLICE_X73Y81.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
@@ -1186,7 +1186,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<6>/CLK
   Logical resource: peri/enable16_counter_4/CK
-  Location pin: SLICE_X64Y80.CLK
+  Location pin: SLICE_X73Y82.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1195,7 +1195,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<6>/CLK
   Logical resource: peri/enable16_counter_4/CK
-  Location pin: SLICE_X64Y80.CLK
+  Location pin: SLICE_X73Y82.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - min period limit)
@@ -1203,7 +1203,7 @@ Slack: 9.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: peri/enable16_counter<6>/CLK
   Logical resource: peri/enable16_counter_4/CK
-  Location pin: SLICE_X64Y80.CLK
+  Location pin: SLICE_X73Y82.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
@@ -1212,7 +1212,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<6>/CLK
   Logical resource: peri/enable16_counter_6/CK
-  Location pin: SLICE_X64Y80.CLK
+  Location pin: SLICE_X73Y82.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1221,7 +1221,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<6>/CLK
   Logical resource: peri/enable16_counter_6/CK
-  Location pin: SLICE_X64Y80.CLK
+  Location pin: SLICE_X73Y82.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - min period limit)
@@ -1229,7 +1229,7 @@ Slack: 9.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: peri/enable16_counter<6>/CLK
   Logical resource: peri/enable16_counter_6/CK
-  Location pin: SLICE_X64Y80.CLK
+  Location pin: SLICE_X73Y82.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
@@ -1238,7 +1238,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_8/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1247,7 +1247,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_8/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - min period limit)
@@ -1255,7 +1255,7 @@ Slack: 9.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_8/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
@@ -1264,7 +1264,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_9/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1273,7 +1273,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_9/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - min period limit)
@@ -1281,7 +1281,7 @@ Slack: 9.000ns (period - min period limit)
   Min period limit: 1.000ns (1000.000MHz) (Tcp)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_9/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
@@ -1290,7 +1290,7 @@ Slack: 9.000ns (period - (min low pulse limit / (low pulse / period)))
   Low pulse limit: 0.500ns (Tcl)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_10/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
@@ -1299,7 +1299,7 @@ Slack: 9.000ns (period - (min high pulse limit / (high pulse / period)))
   High pulse limit: 0.500ns (Tch)
   Physical resource: peri/enable16_counter<11>/CLK
   Logical resource: peri/enable16_counter_10/CK
-  Location pin: SLICE_X64Y81.CLK
+  Location pin: SLICE_X73Y83.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1316,7 +1316,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.030|         |         |         |
+clk            |    3.613|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1325,23 +1325,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 1146 paths, 0 nets, and 163 connections
+Constraints cover 1178 paths, 0 nets, and 147 connections
 
 Design statistics:
-   Minimum period:   4.030ns{1}   (Maximum frequency: 248.139MHz)
+   Minimum period:   3.613ns{1}   (Maximum frequency: 276.778MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Fri Mar 16 20:51:52 2018 
+Analysis completed Mon Apr  9 12:52:18 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 777 MB
+Peak Memory Usage: 774 MB
 
 
 

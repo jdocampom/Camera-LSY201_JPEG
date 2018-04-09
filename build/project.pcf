@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Mar 16 20:51:15 2018
+// Written by: Map P.20131013 on Mon Apr 09 12:51:42 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -20,7 +20,8 @@ COMP "datout<3>" LOCATE = SITE "T6" LEVEL 1;
 COMP "datout<4>" LOCATE = SITE "T5" LEVEL 1;
 COMP "full" LOCATE = SITE "U1" LEVEL 1;
 TIMEGRP sys_clk_pin = BEL "w" BEL "peri/rx_bitcount_2" BEL
-        "peri/rx_bitcount_3" BEL "peri/enable16_counter_15" BEL
+        "peri/rx_bitcount_1" BEL "peri/rx_bitcount_3" BEL
+        "peri/enable16_counter_15" BEL "peri/rx_bitcount_0" BEL
         "peri/enable16_counter_13" BEL "peri/enable16_counter_12" BEL
         "peri/enable16_counter_14" BEL "peri/enable16_counter_11" BEL
         "peri/enable16_counter_10" BEL "peri/enable16_counter_9" BEL
@@ -28,15 +29,15 @@ TIMEGRP sys_clk_pin = BEL "w" BEL "peri/rx_bitcount_2" BEL
         "peri/enable16_counter_5" BEL "peri/enable16_counter_7" BEL
         "peri/enable16_counter_4" BEL "peri/enable16_counter_3" BEL
         "peri/enable16_counter_2" BEL "peri/enable16_counter_1" BEL
-        "peri/enable16_counter_0" BEL "peri/rx_data_7" BEL "peri/rx_data_6"
-        BEL "peri/rx_data_5" BEL "peri/rx_data_4" BEL "peri/rx_data_3" BEL
-        "peri/rx_data_2" BEL "peri/rx_data_1" BEL "peri/rx_data_0" BEL
-        "peri/rxd_reg_7" BEL "peri/rxd_reg_6" BEL "peri/rxd_reg_5" BEL
-        "peri/rxd_reg_4" BEL "peri/rxd_reg_3" BEL "peri/rxd_reg_2" BEL
-        "peri/rxd_reg_1" BEL "peri/rxd_reg_0" BEL "peri/uart_rxd2" BEL
-        "peri/uart_rxd1" BEL "peri/rx_count16_2" BEL "peri/rx_count16_1" BEL
-        "peri/rx_count16_0" BEL "peri/rx_busy" BEL "peri/rx_count16_3" BEL
-        "peri/rx_bitcount_1" BEL "peri/rx_bitcount_0" BEL "clk_BUFGP/BUFG";
+        "peri/rx_count16_3" BEL "peri/enable16_counter_0" BEL "peri/rx_data_7"
+        BEL "peri/rx_data_6" BEL "peri/rx_data_5" BEL "peri/rx_data_4" BEL
+        "peri/rx_data_3" BEL "peri/rx_data_2" BEL "peri/rx_data_1" BEL
+        "peri/rx_data_0" BEL "peri/rxd_reg_7" BEL "peri/rxd_reg_6" BEL
+        "peri/rxd_reg_5" BEL "peri/rxd_reg_4" BEL "peri/rxd_reg_3" BEL
+        "peri/rxd_reg_2" BEL "peri/rxd_reg_1" BEL "peri/rxd_reg_0" BEL
+        "peri/uart_rxd2" BEL "peri/uart_rxd1" BEL "peri/rx_count16_2" BEL
+        "peri/rx_count16_1" BEL "peri/rx_count16_0" BEL "peri/rx_busy" BEL
+        "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 

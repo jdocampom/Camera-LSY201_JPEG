@@ -57,6 +57,7 @@ Parsing module <uart>.
 INFO:HDLCompiler:693 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 28. parameter declaration becomes local in uart with formal parameter declaration list
 Analyzing Verilog file "/home/juandiegoocampo/Dropbox/Camera/FIFO.v" into library work
 Parsing module <FIFO>.
+INFO:HDLCompiler:693 - "/home/juandiegoocampo/Dropbox/Camera/FIFO.v" Line 37. parameter declaration becomes local in FIFO with formal parameter declaration list
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -67,7 +68,7 @@ Elaborating module <camera_fifo>.
 WARNING:HDLCompiler:872 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 17: Using initial value of tx_wr since it is never assigned
 WARNING:HDLCompiler:872 - "/home/juandiegoocampo/Dropbox/Camera/camera_fifo.v" Line 19: Using initial value of tx_data since it is never assigned
 
-Elaborating module <FIFO(DATO_WIDTH=8,FIFO_LENGTH=53)>.
+Elaborating module <FIFO(DATO_WIDTH=8,FIFO_LENGTH=7)>.
 
 Elaborating module <uart>.
 WARNING:HDLCompiler:413 - "/home/juandiegoocampo/Dropbox/Camera/uart.v" Line 43: Result of 32-bit expression is truncated to fit in 16-bit target.
@@ -98,29 +99,31 @@ Unit <camera_fifo> synthesized.
 Synthesizing Unit <FIFO>.
     Related source file is "/home/juandiegoocampo/Dropbox/Camera/FIFO.v".
         DATO_WIDTH = 8
-        FIFO_LENGTH = 53
-    Found 6-bit register for signal <cont>.
-    Found 6-bit register for signal <contw>.
-    Found 6-bit register for signal <contr>.
+        FIFO_LENGTH = 7
+    Found 128-bit register for signal <cont>.
+    Found 128-bit register for signal <contw>.
+    Found 128-bit register for signal <contr>.
     Found 8-bit register for signal <datout>.
-    Found 424-bit register for signal <n0282[423:0]>.
-    Found 6-bit subtractor for signal <cont[5]_GND_2_o_sub_121_OUT> created at line 57.
-    Found 6-bit adder for signal <cont[5]_GND_2_o_add_58_OUT> created at line 49.
-    Found 6-bit adder for signal <contw[5]_GND_2_o_add_294_OUT> created at line 73.
-    Found 6-bit adder for signal <contr[5]_GND_2_o_add_354_OUT> created at line 79.
-    Found 8-bit 53-to-1 multiplexer for signal <contr[5]_X_2_o_wide_mux_299_OUT> created at line 77.
+    Found 128-bit subtractor for signal <cont[127]_GND_2_o_sub_13_OUT> created at line 67.
+    Found 128-bit adder for signal <cont[127]_GND_2_o_add_5_OUT> created at line 59.
+    Found 128-bit adder for signal <contw[127]_GND_2_o_add_25_OUT> created at line 83.
+    Found 128-bit adder for signal <contr[127]_GND_2_o_add_30_OUT> created at line 89.
+    Found 128x8-bit dual-port RAM <Mram_f> for signal <f>.
 WARNING:Xst:737 - Found 1-bit latch for signal <empy>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <dato>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <full>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 6-bit comparator lessequal for signal <n0167> created at line 74
-    Found 6-bit comparator lessequal for signal <n0229> created at line 80
-    Found 6-bit comparator greater for signal <GND_2_o_cont[5]_LessThan_385_o> created at line 94
+    Found 128-bit comparator lessequal for signal <n0012> created at line 84
+    Found 128-bit comparator lessequal for signal <n0019> created at line 90
+    Found 128-bit comparator greater for signal <GND_2_o_cont[127]_LessThan_59_o> created at line 109
+    Found 128-bit comparator greater for signal <cont[127]_GND_2_o_LessThan_60_o> created at line 109
+    Found 7-bit comparator equal for signal <_n0116> created at line 56
     Summary:
+	inferred   1 RAM(s).
 	inferred   3 Adder/Subtractor(s).
-	inferred 450 D-type flip-flop(s).
+	inferred 392 D-type flip-flop(s).
 	inferred   3 Latch(s).
-	inferred   3 Comparator(s).
-	inferred 220 Multiplexer(s).
+	inferred   5 Comparator(s).
+	inferred  24 Multiplexer(s).
 Unit <FIFO> synthesized.
 
 Synthesizing Unit <uart>.
@@ -157,30 +160,30 @@ Unit <uart> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 1
+ 128x8-bit dual-port RAM                               : 1
 # Adders/Subtractors                                   : 8
+ 128-bit adder                                         : 2
+ 128-bit addsub                                        : 1
  16-bit subtractor                                     : 1
  4-bit adder                                           : 4
- 6-bit adder                                           : 2
- 6-bit addsub                                          : 1
-# Registers                                            : 21
+# Registers                                            : 20
  1-bit register                                        : 8
+ 128-bit register                                      : 3
  16-bit register                                       : 1
  4-bit register                                        : 4
- 424-bit register                                      : 1
- 6-bit register                                        : 3
  8-bit register                                        : 4
 # Latches                                              : 3
  1-bit latch                                           : 3
-# Comparators                                          : 3
- 6-bit comparator greater                              : 1
- 6-bit comparator lessequal                            : 2
-# Multiplexers                                         : 222
- 1-bit 2-to-1 multiplexer                              : 3
+# Comparators                                          : 5
+ 128-bit comparator greater                            : 2
+ 128-bit comparator lessequal                          : 2
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 26
+ 1-bit 2-to-1 multiplexer                              : 11
+ 128-bit 2-to-1 multiplexer                            : 2
  16-bit 2-to-1 multiplexer                             : 1
- 32-bit 2-to-1 multiplexer                             : 106
- 6-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 109
- 8-bit 53-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 12
 
 =========================================================================
 
@@ -206,8 +209,23 @@ WARNING:Xst:2404 -  FFs/Latches <txd_reg<7:0>> (without init value) have a const
 
 Synthesizing (advanced) Unit <FIFO>.
 The following registers are absorbed into counter <cont>: 1 register on signal <cont>.
-The following registers are absorbed into counter <contw>: 1 register on signal <contw>.
-The following registers are absorbed into counter <contr>: 1 register on signal <contr>.
+INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <contw> prevents it from being combined with the RAM <Mram_f> for implementation as read-only block RAM.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     clkA           | connected to signal <orwr>          | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <contw<6:0>>    |          |
+    |     diA            | connected to signal <_n0206>        |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     addrB          | connected to signal <contr<6:0>>    |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_f> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 Unit <FIFO> synthesized (advanced).
 
 Synthesizing (advanced) Unit <uart>.
@@ -222,21 +240,24 @@ Unit <uart> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 8
+# RAMs                                                 : 1
+ 128x8-bit dual-port distributed RAM                   : 1
+# Adders/Subtractors                                   : 2
+ 128-bit adder                                         : 2
+# Counters                                             : 6
+ 128-bit updown counter                                : 1
  16-bit down counter                                   : 1
  4-bit up counter                                      : 4
- 6-bit up counter                                      : 2
- 6-bit updown counter                                  : 1
-# Registers                                            : 456
- Flip-Flops                                            : 456
-# Comparators                                          : 3
- 6-bit comparator greater                              : 1
- 6-bit comparator lessequal                            : 2
-# Multiplexers                                         : 219
- 1-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 106
- 8-bit 2-to-1 multiplexer                              : 109
- 8-bit 53-to-1 multiplexer                             : 1
+# Registers                                            : 288
+ Flip-Flops                                            : 288
+# Comparators                                          : 5
+ 128-bit comparator greater                            : 2
+ 128-bit comparator lessequal                          : 2
+ 7-bit comparator equal                                : 1
+# Multiplexers                                         : 25
+ 1-bit 2-to-1 multiplexer                              : 11
+ 128-bit 2-to-1 multiplexer                            : 2
+ 8-bit 2-to-1 multiplexer                              : 12
 
 =========================================================================
 
@@ -262,9 +283,9 @@ WARNING:Xst:3001 - This design contains one or more registers or latches with an
   Please refer to http://www.xilinx.com search string "Artix7 asynchronous set/reset" for more details.
 
   List of register instances with asynchronous set and reset:
-    dato in unit <FIFO>
-    empy in unit <FIFO>
     full in unit <FIFO>
+    empy in unit <FIFO>
+    dato in unit <FIFO>
 
 
 Optimizing unit <camera_fifo> ...
@@ -274,10 +295,252 @@ Optimizing unit <uart> ...
 Optimizing unit <FIFO> ...
 WARNING:Xst:2677 - Node <peri/rx_avail> of sequential type is unconnected in block <camera_fifo>.
 WARNING:Xst:2677 - Node <peri/rx_error> of sequential type is unconnected in block <camera_fifo>.
+WARNING:Xst:1293 - FF/Latch <fifo/contw_97> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_96> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_95> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_94> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_93> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_92> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_91> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_90> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_89> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_88> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_87> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_86> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_85> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_84> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_83> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_82> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_81> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_80> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_79> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_78> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_77> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_76> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_75> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_74> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_73> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_72> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_71> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_70> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_69> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_68> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_127> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_126> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_125> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_124> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_123> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_122> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_121> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_120> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_119> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_118> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_117> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_116> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_115> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_114> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_113> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_112> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_111> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_110> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_109> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_108> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_107> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_106> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_105> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_104> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_103> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_102> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_101> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_100> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_99> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_98> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_36> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_35> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_34> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_33> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_32> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_31> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_30> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_29> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_28> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_27> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_26> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_25> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_24> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_23> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_22> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_21> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_20> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_19> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_18> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_17> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_16> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_15> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_14> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_13> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_12> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_11> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_10> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_9> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_8> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_7> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_67> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_66> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_65> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_64> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_63> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_62> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_61> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_60> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_59> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_58> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_57> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_56> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_55> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_54> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_53> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_52> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_51> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_50> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_49> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_48> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_47> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_46> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_45> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_44> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_43> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_42> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_41> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_40> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_39> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_38> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contw_37> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_97> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_96> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_95> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_94> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_93> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_92> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_91> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_90> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_89> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_88> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_87> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_86> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_85> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_84> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_83> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_82> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_81> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_80> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_79> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_78> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_77> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_76> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_75> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_74> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_73> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_72> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_71> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_70> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_69> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_68> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_127> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_126> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_125> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_124> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_123> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_122> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_121> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_120> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_119> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_118> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_117> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_116> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_115> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_114> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_113> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_112> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_111> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_110> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_109> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_108> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_107> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_106> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_105> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_104> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_103> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_102> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_101> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_100> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_99> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_98> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_36> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_35> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_34> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_33> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_32> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_31> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_30> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_29> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_28> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_27> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_26> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_25> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_24> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_23> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_22> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_21> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_20> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_19> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_18> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_17> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_16> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_15> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_14> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_13> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_12> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_11> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_10> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_9> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_8> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_7> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_67> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_66> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_65> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_64> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_63> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_62> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_61> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_60> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_59> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_58> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_57> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_56> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_55> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_54> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_53> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_52> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_51> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_50> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_49> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_48> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_47> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_46> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_45> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_44> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_43> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_42> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_41> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_40> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_39> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_38> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fifo/contr_37> has a constant value of 0 in block <camera_fifo>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block camera_fifo, actual ratio is 1.
+Found area constraint ratio of 100 (+ 0) on block camera_fifo, actual ratio is 0.
 Latch fifo/empy has been replicated 1 time(s) to handle iob=true attribute.
 Latch fifo/full has been replicated 1 time(s) to handle iob=true attribute.
 
@@ -287,8 +550,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 494
- Flip-Flops                                            : 494
+# Registers                                            : 194
+ Flip-Flops                                            : 194
 
 =========================================================================
 
@@ -311,25 +574,28 @@ Top Level Output File Name         : project.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 991
+# BELS                             : 786
 #      GND                         : 1
-#      INV                         : 16
-#      LUT1                        : 1
-#      LUT2                        : 11
-#      LUT3                        : 50
-#      LUT4                        : 10
-#      LUT5                        : 442
-#      LUT6                        : 428
-#      MUXCY                       : 15
+#      INV                         : 20
+#      LUT1                        : 15
+#      LUT2                        : 150
+#      LUT3                        : 9
+#      LUT4                        : 11
+#      LUT5                        : 88
+#      LUT6                        : 52
+#      MUXCY                       : 279
 #      VCC                         : 1
-#      XORCY                       : 16
-# FlipFlops/Latches                : 499
-#      FD                          : 6
-#      FDE                         : 440
+#      XORCY                       : 160
+# FlipFlops/Latches                : 199
+#      FD                          : 3
+#      FDE                         : 16
 #      FDR                         : 17
-#      FDRE                        : 28
+#      FDRE                        : 155
 #      FDS                         : 3
 #      LD                          : 5
+# RAMS                             : 8
+#      RAM64M                      : 4
+#      RAM64X1D                    : 4
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
@@ -344,15 +610,17 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             487  out of  126800     0%  
- Number of Slice LUTs:                  958  out of  63400     1%  
-    Number used as Logic:               958  out of  63400     1%  
+ Number of Slice Registers:             187  out of  126800     0%  
+ Number of Slice LUTs:                  369  out of  63400     0%  
+    Number used as Logic:               345  out of  63400     0%  
+    Number used as Memory:               24  out of  19000     0%  
+       Number used as RAM:               24
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    968
-   Number with an unused Flip Flop:     481  out of    968    49%  
-   Number with an unused LUT:            10  out of    968     1%  
-   Number of fully used LUT-FF pairs:   477  out of    968    49%  
+ Number of LUT Flip Flop pairs used:    375
+   Number with an unused Flip Flop:     188  out of    375    50%  
+   Number with an unused LUT:             6  out of    375     1%  
+   Number of fully used LUT-FF pairs:   181  out of    375    48%  
    Number of unique control sets:        14
 
 IO Utilization: 
@@ -385,10 +653,10 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 44    |
-fifo/orwr(fifo/orwr1:O)            | BUFG(*)(fifo/cont_5)   | 450   |
-fifo/dato_G(fifo/dato_G:O)         | NONE(*)(fifo/dato)     | 1     |
-fifo/empy_G(fifo/empy_G:O)         | NONE(*)(fifo/empy)     | 2     |
+fifo/orwr(fifo/orwr1:O)            | BUFG(*)(fifo/cont_127) | 158   |
 fifo/full_G(fifo/full_G:O)         | NONE(*)(fifo/full)     | 2     |
+fifo/empy_G(fifo/empy_G:O)         | NONE(*)(fifo/empy)     | 2     |
+fifo/dato_G(fifo/dato_G:O)         | NONE(*)(fifo/dato)     | 1     |
 -----------------------------------+------------------------+-------+
 (*) These 4 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -403,8 +671,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.892ns (Maximum Frequency: 345.758MHz)
-   Minimum input arrival time before clock: 2.718ns
+   Minimum period: 4.392ns (Maximum Frequency: 227.682MHz)
+   Minimum input arrival time before clock: 4.231ns
    Maximum output required time after clock: 0.751ns
    Maximum combinational path delay: No path found
 
@@ -414,96 +682,346 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.892ns (frequency: 345.758MHz)
-  Total number of paths / destination ports: 1146 / 76
+  Clock period: 2.988ns (frequency: 334.638MHz)
+  Total number of paths / destination ports: 1178 / 82
 -------------------------------------------------------------------------
-Delay:               2.892ns (Levels of Logic = 4)
+Delay:               2.988ns (Levels of Logic = 3)
   Source:            peri/enable16_counter_1 (FF)
-  Destination:       peri/rx_data_7 (FF)
+  Destination:       peri/rx_bitcount_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: peri/enable16_counter_1 to peri/rx_data_7
+  Data Path: peri/enable16_counter_1 to peri/rx_bitcount_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q              2   0.361   0.697  peri/enable16_counter_1 (peri/enable16_counter_1)
      LUT6:I0->O            1   0.097   0.379  peri/enable16<15>1 (peri/enable16<15>)
-     LUT6:I4->O           14   0.097   0.355  peri/enable16<15>3 (peri/enable16)
-     LUT6:I5->O            3   0.097   0.305  peri/_n03661 (peri/_n0366)
-     LUT6:I5->O            8   0.097   0.311  peri/_n0288_inv1 (peri/_n0288_inv)
-     FDE:CE                    0.095          peri/rxd_reg_0
+     LUT6:I4->O           13   0.097   0.612  peri/enable16<15>3 (peri/enable16)
+     LUT4:I0->O            5   0.097   0.298  peri/Mcount_rx_bitcount_val1 (peri/Mcount_rx_bitcount_val)
+     FDRE:R                    0.349          peri/rx_bitcount_0
     ----------------------------------------
-    Total                      2.892ns (0.844ns logic, 2.048ns route)
-                                       (29.2% logic, 70.8% route)
+    Total                      2.988ns (1.001ns logic, 1.987ns route)
+                                       (33.5% logic, 66.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fifo/orwr'
-  Clock period: 2.817ns (frequency: 354.937MHz)
-  Total number of paths / destination ports: 13699 / 450
+  Clock period: 4.392ns (frequency: 227.682MHz)
+  Total number of paths / destination ports: 16890 / 230
 -------------------------------------------------------------------------
-Delay:               2.817ns (Levels of Logic = 4)
-  Source:            fifo/f_52_359 (FF)
-  Destination:       fifo/datout_7 (FF)
+Delay:               4.392ns (Levels of Logic = 129)
+  Source:            fifo/cont_0 (FF)
+  Destination:       fifo/cont_127 (FF)
   Source Clock:      fifo/orwr rising
   Destination Clock: fifo/orwr rising
 
-  Data Path: fifo/f_52_359 to fifo/datout_7
+  Data Path: fifo/cont_0 to fifo/cont_127
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.361   0.697  fifo/f_52_359 (fifo/f_52_359)
-     LUT6:I0->O            1   0.097   0.556  fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_1129 (fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_1129)
-     LUT6:I2->O            1   0.097   0.511  fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_67 (fifo/Mmux_contr[5]_X_2_o_wide_mux_299_OUT_67)
-     LUT6:I3->O            1   0.097   0.295  fifo/Mmux__n088481 (fifo/Mmux__n08848)
-     LUT6:I5->O            1   0.097   0.000  fifo/Mmux__n088482 (fifo/_n0884<7>)
-     FDRE:D                    0.008          fifo/datout_7
+     FDRE:C->Q             3   0.361   0.305  fifo/cont_0 (fifo/cont_0)
+     LUT2:I1->O            1   0.097   0.000  fifo/Mcount_cont_lut<0> (fifo/Mcount_cont_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  fifo/Mcount_cont_cy<0> (fifo/Mcount_cont_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<1> (fifo/Mcount_cont_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<2> (fifo/Mcount_cont_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<3> (fifo/Mcount_cont_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<4> (fifo/Mcount_cont_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<5> (fifo/Mcount_cont_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<6> (fifo/Mcount_cont_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<7> (fifo/Mcount_cont_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<8> (fifo/Mcount_cont_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<9> (fifo/Mcount_cont_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<10> (fifo/Mcount_cont_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<11> (fifo/Mcount_cont_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<12> (fifo/Mcount_cont_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<13> (fifo/Mcount_cont_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<14> (fifo/Mcount_cont_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<15> (fifo/Mcount_cont_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<16> (fifo/Mcount_cont_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<17> (fifo/Mcount_cont_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<18> (fifo/Mcount_cont_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<19> (fifo/Mcount_cont_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<20> (fifo/Mcount_cont_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<21> (fifo/Mcount_cont_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<22> (fifo/Mcount_cont_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<23> (fifo/Mcount_cont_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<24> (fifo/Mcount_cont_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<25> (fifo/Mcount_cont_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<26> (fifo/Mcount_cont_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<27> (fifo/Mcount_cont_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<28> (fifo/Mcount_cont_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<29> (fifo/Mcount_cont_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<30> (fifo/Mcount_cont_cy<30>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<31> (fifo/Mcount_cont_cy<31>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<32> (fifo/Mcount_cont_cy<32>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<33> (fifo/Mcount_cont_cy<33>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<34> (fifo/Mcount_cont_cy<34>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<35> (fifo/Mcount_cont_cy<35>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<36> (fifo/Mcount_cont_cy<36>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<37> (fifo/Mcount_cont_cy<37>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<38> (fifo/Mcount_cont_cy<38>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<39> (fifo/Mcount_cont_cy<39>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<40> (fifo/Mcount_cont_cy<40>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<41> (fifo/Mcount_cont_cy<41>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<42> (fifo/Mcount_cont_cy<42>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<43> (fifo/Mcount_cont_cy<43>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<44> (fifo/Mcount_cont_cy<44>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<45> (fifo/Mcount_cont_cy<45>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<46> (fifo/Mcount_cont_cy<46>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<47> (fifo/Mcount_cont_cy<47>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<48> (fifo/Mcount_cont_cy<48>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<49> (fifo/Mcount_cont_cy<49>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<50> (fifo/Mcount_cont_cy<50>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<51> (fifo/Mcount_cont_cy<51>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<52> (fifo/Mcount_cont_cy<52>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<53> (fifo/Mcount_cont_cy<53>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<54> (fifo/Mcount_cont_cy<54>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<55> (fifo/Mcount_cont_cy<55>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<56> (fifo/Mcount_cont_cy<56>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<57> (fifo/Mcount_cont_cy<57>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<58> (fifo/Mcount_cont_cy<58>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<59> (fifo/Mcount_cont_cy<59>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<60> (fifo/Mcount_cont_cy<60>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<61> (fifo/Mcount_cont_cy<61>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<62> (fifo/Mcount_cont_cy<62>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<63> (fifo/Mcount_cont_cy<63>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<64> (fifo/Mcount_cont_cy<64>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<65> (fifo/Mcount_cont_cy<65>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<66> (fifo/Mcount_cont_cy<66>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<67> (fifo/Mcount_cont_cy<67>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<68> (fifo/Mcount_cont_cy<68>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<69> (fifo/Mcount_cont_cy<69>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<70> (fifo/Mcount_cont_cy<70>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<71> (fifo/Mcount_cont_cy<71>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<72> (fifo/Mcount_cont_cy<72>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<73> (fifo/Mcount_cont_cy<73>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<74> (fifo/Mcount_cont_cy<74>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<75> (fifo/Mcount_cont_cy<75>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<76> (fifo/Mcount_cont_cy<76>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<77> (fifo/Mcount_cont_cy<77>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<78> (fifo/Mcount_cont_cy<78>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<79> (fifo/Mcount_cont_cy<79>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<80> (fifo/Mcount_cont_cy<80>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<81> (fifo/Mcount_cont_cy<81>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<82> (fifo/Mcount_cont_cy<82>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<83> (fifo/Mcount_cont_cy<83>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<84> (fifo/Mcount_cont_cy<84>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<85> (fifo/Mcount_cont_cy<85>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<86> (fifo/Mcount_cont_cy<86>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<87> (fifo/Mcount_cont_cy<87>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<88> (fifo/Mcount_cont_cy<88>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<89> (fifo/Mcount_cont_cy<89>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<90> (fifo/Mcount_cont_cy<90>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<91> (fifo/Mcount_cont_cy<91>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<92> (fifo/Mcount_cont_cy<92>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<93> (fifo/Mcount_cont_cy<93>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<94> (fifo/Mcount_cont_cy<94>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<95> (fifo/Mcount_cont_cy<95>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<96> (fifo/Mcount_cont_cy<96>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<97> (fifo/Mcount_cont_cy<97>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<98> (fifo/Mcount_cont_cy<98>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<99> (fifo/Mcount_cont_cy<99>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<100> (fifo/Mcount_cont_cy<100>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<101> (fifo/Mcount_cont_cy<101>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<102> (fifo/Mcount_cont_cy<102>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<103> (fifo/Mcount_cont_cy<103>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<104> (fifo/Mcount_cont_cy<104>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<105> (fifo/Mcount_cont_cy<105>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<106> (fifo/Mcount_cont_cy<106>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<107> (fifo/Mcount_cont_cy<107>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<108> (fifo/Mcount_cont_cy<108>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<109> (fifo/Mcount_cont_cy<109>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<110> (fifo/Mcount_cont_cy<110>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<111> (fifo/Mcount_cont_cy<111>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<112> (fifo/Mcount_cont_cy<112>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<113> (fifo/Mcount_cont_cy<113>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<114> (fifo/Mcount_cont_cy<114>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<115> (fifo/Mcount_cont_cy<115>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<116> (fifo/Mcount_cont_cy<116>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<117> (fifo/Mcount_cont_cy<117>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<118> (fifo/Mcount_cont_cy<118>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<119> (fifo/Mcount_cont_cy<119>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<120> (fifo/Mcount_cont_cy<120>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<121> (fifo/Mcount_cont_cy<121>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<122> (fifo/Mcount_cont_cy<122>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<123> (fifo/Mcount_cont_cy<123>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<124> (fifo/Mcount_cont_cy<124>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<125> (fifo/Mcount_cont_cy<125>)
+     MUXCY:CI->O           0   0.023   0.000  fifo/Mcount_cont_cy<126> (fifo/Mcount_cont_cy<126>)
+     XORCY:CI->O           1   0.370   0.000  fifo/Mcount_cont_xor<127> (fifo/Result<127>)
+     FDRE:D                    0.008          fifo/cont_127
     ----------------------------------------
-    Total                      2.817ns (0.757ns logic, 2.060ns route)
-                                       (26.9% logic, 73.1% route)
+    Total                      4.392ns (4.087ns logic, 0.305ns route)
+                                       (93.1% logic, 6.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 45 / 45
 -------------------------------------------------------------------------
-Offset:              1.422ns (Levels of Logic = 2)
+Offset:              1.404ns (Levels of Logic = 3)
   Source:            reset (PAD)
-  Destination:       peri/rx_bitcount_2 (FF)
+  Destination:       peri/rx_data_7 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to peri/rx_bitcount_2
+  Data Path: reset to peri/rx_data_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           184   0.001   0.686  reset_IBUF (reset_IBUF)
-     LUT4:I0->O            3   0.097   0.289  peri/Mcount_rx_bitcount_val1 (peri/Mcount_rx_bitcount_val)
-     FDRE:R                    0.349          peri/rx_bitcount_3
+     IBUF:I->O           167   0.001   0.423  reset_IBUF (reset_IBUF)
+     LUT2:I1->O            1   0.097   0.379  peri/_n0273_inv_SW0 (N2)
+     LUT6:I4->O            8   0.097   0.311  peri/_n0273_inv (peri/_n0273_inv)
+     FDE:CE                    0.095          peri/rx_data_0
     ----------------------------------------
-    Total                      1.422ns (0.447ns logic, 0.975ns route)
-                                       (31.4% logic, 68.6% route)
+    Total                      1.404ns (0.290ns logic, 1.114ns route)
+                                       (20.7% logic, 79.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fifo/orwr'
-  Total number of paths / destination ports: 3434 / 905
+  Total number of paths / destination ports: 8748 / 460
 -------------------------------------------------------------------------
-Offset:              2.718ns (Levels of Logic = 5)
+Offset:              4.231ns (Levels of Logic = 130)
   Source:            rclk (PAD)
-  Destination:       fifo/f_52_319 (FF)
+  Destination:       fifo/cont_127 (FF)
   Destination Clock: fifo/orwr rising
 
-  Data Path: rclk to fifo/f_52_319
+  Data Path: rclk to fifo/cont_127
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           117   0.001   0.803  rclk_IBUF (rclk_IBUF)
-     LUT5:I0->O          101   0.097   0.811  fifo/rclk_GND_2_o_mux_373_OUT<0>111 (fifo/rclk_GND_2_o_mux_373_OUT<0>11)
-     LUT6:I0->O            1   0.097   0.295  fifo/rclk_GND_2_o_mux_373_OUT<184>41 (fifo/rclk_GND_2_o_mux_373_OUT<184>41)
-     LUT6:I5->O            8   0.097   0.412  fifo/rclk_GND_2_o_mux_373_OUT<184>42 (fifo/rclk_GND_2_o_mux_373_OUT<184>4)
-     LUT5:I3->O            1   0.097   0.000  fifo/rclk_GND_2_o_mux_373_OUT<191>1 (fifo/rclk_GND_2_o_mux_373_OUT<191>)
-     FDE:D                     0.008          fifo/f_52_191
+     IBUF:I->O           146   0.001   0.504  rclk_IBUF (fifo/rclk_inv_inv1)
+     LUT2:I0->O            1   0.097   0.000  fifo/Mcount_cont_lut<0> (fifo/Mcount_cont_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  fifo/Mcount_cont_cy<0> (fifo/Mcount_cont_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<1> (fifo/Mcount_cont_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<2> (fifo/Mcount_cont_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<3> (fifo/Mcount_cont_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<4> (fifo/Mcount_cont_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<5> (fifo/Mcount_cont_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<6> (fifo/Mcount_cont_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<7> (fifo/Mcount_cont_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<8> (fifo/Mcount_cont_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<9> (fifo/Mcount_cont_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<10> (fifo/Mcount_cont_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<11> (fifo/Mcount_cont_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<12> (fifo/Mcount_cont_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<13> (fifo/Mcount_cont_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<14> (fifo/Mcount_cont_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<15> (fifo/Mcount_cont_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<16> (fifo/Mcount_cont_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<17> (fifo/Mcount_cont_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<18> (fifo/Mcount_cont_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<19> (fifo/Mcount_cont_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<20> (fifo/Mcount_cont_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<21> (fifo/Mcount_cont_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<22> (fifo/Mcount_cont_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<23> (fifo/Mcount_cont_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<24> (fifo/Mcount_cont_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<25> (fifo/Mcount_cont_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<26> (fifo/Mcount_cont_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<27> (fifo/Mcount_cont_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<28> (fifo/Mcount_cont_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<29> (fifo/Mcount_cont_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<30> (fifo/Mcount_cont_cy<30>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<31> (fifo/Mcount_cont_cy<31>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<32> (fifo/Mcount_cont_cy<32>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<33> (fifo/Mcount_cont_cy<33>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<34> (fifo/Mcount_cont_cy<34>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<35> (fifo/Mcount_cont_cy<35>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<36> (fifo/Mcount_cont_cy<36>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<37> (fifo/Mcount_cont_cy<37>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<38> (fifo/Mcount_cont_cy<38>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<39> (fifo/Mcount_cont_cy<39>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<40> (fifo/Mcount_cont_cy<40>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<41> (fifo/Mcount_cont_cy<41>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<42> (fifo/Mcount_cont_cy<42>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<43> (fifo/Mcount_cont_cy<43>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<44> (fifo/Mcount_cont_cy<44>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<45> (fifo/Mcount_cont_cy<45>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<46> (fifo/Mcount_cont_cy<46>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<47> (fifo/Mcount_cont_cy<47>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<48> (fifo/Mcount_cont_cy<48>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<49> (fifo/Mcount_cont_cy<49>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<50> (fifo/Mcount_cont_cy<50>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<51> (fifo/Mcount_cont_cy<51>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<52> (fifo/Mcount_cont_cy<52>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<53> (fifo/Mcount_cont_cy<53>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<54> (fifo/Mcount_cont_cy<54>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<55> (fifo/Mcount_cont_cy<55>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<56> (fifo/Mcount_cont_cy<56>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<57> (fifo/Mcount_cont_cy<57>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<58> (fifo/Mcount_cont_cy<58>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<59> (fifo/Mcount_cont_cy<59>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<60> (fifo/Mcount_cont_cy<60>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<61> (fifo/Mcount_cont_cy<61>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<62> (fifo/Mcount_cont_cy<62>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<63> (fifo/Mcount_cont_cy<63>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<64> (fifo/Mcount_cont_cy<64>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<65> (fifo/Mcount_cont_cy<65>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<66> (fifo/Mcount_cont_cy<66>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<67> (fifo/Mcount_cont_cy<67>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<68> (fifo/Mcount_cont_cy<68>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<69> (fifo/Mcount_cont_cy<69>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<70> (fifo/Mcount_cont_cy<70>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<71> (fifo/Mcount_cont_cy<71>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<72> (fifo/Mcount_cont_cy<72>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<73> (fifo/Mcount_cont_cy<73>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<74> (fifo/Mcount_cont_cy<74>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<75> (fifo/Mcount_cont_cy<75>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<76> (fifo/Mcount_cont_cy<76>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<77> (fifo/Mcount_cont_cy<77>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<78> (fifo/Mcount_cont_cy<78>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<79> (fifo/Mcount_cont_cy<79>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<80> (fifo/Mcount_cont_cy<80>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<81> (fifo/Mcount_cont_cy<81>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<82> (fifo/Mcount_cont_cy<82>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<83> (fifo/Mcount_cont_cy<83>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<84> (fifo/Mcount_cont_cy<84>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<85> (fifo/Mcount_cont_cy<85>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<86> (fifo/Mcount_cont_cy<86>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<87> (fifo/Mcount_cont_cy<87>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<88> (fifo/Mcount_cont_cy<88>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<89> (fifo/Mcount_cont_cy<89>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<90> (fifo/Mcount_cont_cy<90>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<91> (fifo/Mcount_cont_cy<91>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<92> (fifo/Mcount_cont_cy<92>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<93> (fifo/Mcount_cont_cy<93>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<94> (fifo/Mcount_cont_cy<94>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<95> (fifo/Mcount_cont_cy<95>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<96> (fifo/Mcount_cont_cy<96>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<97> (fifo/Mcount_cont_cy<97>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<98> (fifo/Mcount_cont_cy<98>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<99> (fifo/Mcount_cont_cy<99>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<100> (fifo/Mcount_cont_cy<100>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<101> (fifo/Mcount_cont_cy<101>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<102> (fifo/Mcount_cont_cy<102>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<103> (fifo/Mcount_cont_cy<103>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<104> (fifo/Mcount_cont_cy<104>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<105> (fifo/Mcount_cont_cy<105>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<106> (fifo/Mcount_cont_cy<106>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<107> (fifo/Mcount_cont_cy<107>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<108> (fifo/Mcount_cont_cy<108>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<109> (fifo/Mcount_cont_cy<109>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<110> (fifo/Mcount_cont_cy<110>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<111> (fifo/Mcount_cont_cy<111>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<112> (fifo/Mcount_cont_cy<112>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<113> (fifo/Mcount_cont_cy<113>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<114> (fifo/Mcount_cont_cy<114>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<115> (fifo/Mcount_cont_cy<115>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<116> (fifo/Mcount_cont_cy<116>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<117> (fifo/Mcount_cont_cy<117>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<118> (fifo/Mcount_cont_cy<118>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<119> (fifo/Mcount_cont_cy<119>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<120> (fifo/Mcount_cont_cy<120>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<121> (fifo/Mcount_cont_cy<121>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<122> (fifo/Mcount_cont_cy<122>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<123> (fifo/Mcount_cont_cy<123>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<124> (fifo/Mcount_cont_cy<124>)
+     MUXCY:CI->O           1   0.023   0.000  fifo/Mcount_cont_cy<125> (fifo/Mcount_cont_cy<125>)
+     MUXCY:CI->O           0   0.023   0.000  fifo/Mcount_cont_cy<126> (fifo/Mcount_cont_cy<126>)
+     XORCY:CI->O           1   0.370   0.000  fifo/Mcount_cont_xor<127> (fifo/Result<127>)
+     FDRE:D                    0.008          fifo/cont_127
     ----------------------------------------
-    Total                      2.718ns (0.397ns logic, 2.321ns route)
-                                       (14.6% logic, 85.4% route)
+    Total                      4.231ns (3.727ns logic, 0.504ns route)
+                                       (88.1% logic, 11.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fifo/orwr'
@@ -591,7 +1109,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.892|         |         |         |
+clk            |    2.988|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock fifo/dato_G
@@ -599,7 +1117,7 @@ Clock to Setup on destination clock fifo/dato_G
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fifo/orwr      |         |         |    1.801|         |
+fifo/orwr      |         |         |    3.498|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock fifo/empy_G
@@ -607,7 +1125,7 @@ Clock to Setup on destination clock fifo/empy_G
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fifo/orwr      |         |         |    1.792|         |
+fifo/orwr      |         |         |    3.711|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock fifo/full_G
@@ -615,7 +1133,7 @@ Clock to Setup on destination clock fifo/full_G
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fifo/orwr      |         |         |    1.796|         |
+fifo/orwr      |         |         |    3.711|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock fifo/orwr
@@ -623,24 +1141,24 @@ Clock to Setup on destination clock fifo/orwr
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.945|         |         |         |
-fifo/empy_G    |         |    2.764|         |         |
-fifo/full_G    |         |    2.892|         |         |
-fifo/orwr      |    2.817|         |         |         |
+clk            |    2.344|         |         |         |
+fifo/empy_G    |         |    1.748|         |         |
+fifo/full_G    |         |    2.185|         |         |
+fifo/orwr      |    4.392|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.46 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.14 secs
  
 --> 
 
 
-Total memory usage is 516412 kilobytes
+Total memory usage is 505080 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   36 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :  278 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 
